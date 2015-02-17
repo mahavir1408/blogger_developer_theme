@@ -1,0 +1,562 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html b:version='2' class='v2' expr:dir='data:blog.languageDirection' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+	<head>
+		<!-- b:template-skin & b:skin {{{ -->
+		<b:skin>
+			<![CDATA[
+				* {
+					padding: 0px;
+					margin: 0px;
+				}
+				body {
+					background-color: #eeeeee;
+					font-family: "Open Sans", sans-serif;
+					font-size: 14px;
+				}
+				#body {
+					background-color: #ffffff;
+					box-shadow: 0px 0px 10px #adadad;
+					width: 920px;
+					padding: 15px;
+					margin-left: auto;
+					margin-right: auto;
+				}
+				#layout table {
+					display: none;
+				}
+				table {
+					border-collapse: collapse;
+					margin-bottom: 10px;
+					width: 720px;
+				}
+				table td {
+					border: 1px solid #ffffff;
+					height: 24px;
+					line-height: 24px;
+					white-space: nowrap;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					padding: 0px 10px;
+					border: 1px solid #d8d8d8;
+					width: 480px;
+					max-width: 480px;
+				}
+				table tr td:first-child {
+					width: 200px;
+					max-width: 200px;
+				}
+				table tr {
+					background-color: #f8f8f8;
+				}
+				table tr:nth-child(odd) {
+					background-color: #ffffff;
+				}
+				.indent {
+					margin-left: 30px;
+				}
+				.section {
+					margin: 0px;
+				}
+				.copyright {
+					line-height: 30px;
+					height: 30px;
+					text-align: center;
+					border: 1px solid #a7a7a7;
+					background-color: #eeeeee;
+				}
+				.copyright a {
+					color: #810000;
+					text-decoration: none;
+				}
+				.copyright a:hover {
+					text-decoration: underline;
+				}
+			]]>
+		</b:skin>
+		<!-- }}} -->	
+		
+		<b:include data="blog" name="all-head-content" />
+		<b:include data="blog" name="google-analytics" />
+		<title>Developer Info - <data:blog.pageTitle /></title>
+	</head>
+	<body>
+		<b:section class="navbar" id="navbar" maxwidgets="1" showaddelement="no">
+			<b:widget id="Navbar1" locked="yes" type="Navbar" />
+		</b:section>
+
+		<div id="body">
+
+		<!-- Global Data {{{ -->
+		<h1>Global Data</h1>
+		<table>
+			<tr><td>data:blog.title</td><td><data:blog.title/></td></tr>
+			<tr><td>data:blog.pageType</td><td><data:blog.pageType/></td></tr>
+			<tr><td>data:blog.url</td><td><data:blog.url/></td></tr>
+			<tr><td>data:blog.homepageUrl</td><td><data:blog.homepageUrl/></td></tr>
+			<tr><td>data:blog.pageTitle</td><td><data:blog.pageTitle/></td></tr>
+			<tr><td>data:blog.encoding</td><td><data:blog.encoding/></td></tr>
+			<tr><td>data:blog.languageDirection</td><td><data:blog.languageDirection/></td></tr>
+			<tr><td>data:blog.feedLinks</td><td><data:blog.feedLinks/></td></tr>
+			<tr><td>data:blog.enabledCommentProfileImages</td><td><data:blog.enabledCommentProfileImages/></td></tr>
+			<tr><td>data:blog.blogId</td><td><data:blog.blogId/></td></tr>
+			<tr><td>data:blog.metaDescription</td><td><data:blog.metaDescription/></td></tr>
+			<tr><td>data:blog.canonicalHomepageUrl</td><td><data:blog.canonicalHomepageUrl/></td></tr>
+			<tr><td>data:blog.plusone</td><td><data:blog.plusone/></td></tr>
+			<tr><td>data:blog.isMobileRequest</td><td><data:blog.isMobileRequest/></td></tr>
+		</table>
+		<!-- }}} -->
+
+		<b:section id="main" class="main" showaddelement="yes">
+
+			<!-- Blog Widget Tags {{{ -->
+			<b:widget id="Blog1" locked="yes" type="Blog">
+				<b:includable id="main">
+					<h1>Blog</h1>
+					<table>
+						<tr><td>data:feedLinks</td><td><data:feedLinks/></td></tr>
+						<tr><td>data:olderPageUrl</td><td><data:olderPageUrl/></td></tr>
+						<tr><td>data:olderPageTitle</td><td><data:olderPageTitle/></td></tr>
+						<tr><td>data:newerPageUrl</td><td><data:newerPageUrl/></td></tr>
+						<tr><td>data:newerPageTitle</td><td><data:newerPageTitle/></td></tr>
+						<tr><td>data:commentLabel</td><td><data:commentLabel/></td></tr>
+						<tr><td>data:authorLabel</td><td><data:authorLabel/></td></tr>
+						<tr><td>data:timestampLabel</td><td><data:timestampLabel/></td></tr>
+						<tr><td>data:postLabelsLabel</td><td><data:postLabelsLabel/></td></tr>
+						<tr><td>data:backlinksLabel</td><td><data:backlinksLabel/></td></tr>
+						<tr><td>data:numPosts</td><td><data:numPosts/></td></tr>
+					</table>
+					<div class="indent">
+						<h2>data:posts</h2>
+						<b:loop var="post" values="data:posts">
+							<table>
+								<tr><td>data:post.dateHeader</td><td><data:post.dateHeader/></td></tr>
+								<tr><td>data:post.id</td><td><data:post.id/></td></tr>
+								<tr><td>data:post.title</td><td><data:post.title/></td></tr>
+								<tr><td>data:post.body</td><td><data:post.body/></td></tr>
+								<tr><td>data:post.snippet</td><td><data:post.snippet/></td></tr>
+								<tr><td>data:post.author</td><td><data:post.author/></td></tr>
+								<tr><td>data:post.authorAboutMe</td><td><data:post.authorAboutMe/></td></tr>
+								<tr><td>data:post.authorProfileUrl</td><td><data:post.authorProfileUrl/></td></tr>
+								<tr><td>data:post.authorPhoto.url</td><td><data:post.authorPhoto.url/></td></tr>
+								<tr><td>data:post.url</td><td><data:post.url/></td></tr>
+								<tr><td>data:post.timestamp</td><td><data:post.timestamp/></td></tr>
+								<tr><td>data:post.allowComments</td><td><data:post.allowComments/></td></tr>
+								<tr><td>data:post.numComments</td><td><data:post.numComments/></td></tr>
+								<tr><td>data:post.embedCommentForm</td><td><data:post.embedCommentForm/></td></tr>
+								<tr><td>data:post.allowNewComments</td><td><data:post.allowNewComments/></td></tr>
+								<tr><td>data:post.commentPagingRequired</td><td><data:post.commentPagingRequired/></td></tr>
+								<tr><td>data:post.showBacklinks</td><td>Boolean: <b:if cond="data:post.showBacklinks">True<b:else/>False</b:if></td></tr>
+								<tr><td>data:post.numBacklinks</td><td><data:post.numBacklinks/></td></tr>
+								<tr><td>data:post.addCommentUrl</td><td><data:post.addCommentUrl/></td></tr>
+								<tr><td>data:post.emailPostUrl</td><td><data:post.emailPostUrl/></td></tr>
+								<tr><td>data:post.editUrl</td><td><data:post.editUrl/></td></tr>
+								<tr><td>data:post.feedLinks</td><td><data:post.feedLinks/></td></tr>
+								<tr><td>data:post.isFirstPost</td><td><data:post.isFirstPost/></td></tr>
+								<tr><td>data:post.isDateStart</td><td><data:post.isDateStart/></td></tr>
+								<tr><td>data:post.includeAd</td><td>Boolean: <b:if cond="data:post.includeAd">True<b:else/>False</b:if></td></tr>
+								<tr><td>data:post.createLinkLabel</td><td><data:post.createLinkLabel/></td></tr>
+								<tr><td>data:post.createLinkUrl</td><td><data:post.createLinkUrl/></td></tr>
+								<tr><td>data:post.commentSource</td><td><data:post.commentSource/></td></tr>
+								<tr><td>data:post.showThreadedComments</td><td><data:post.showThreadedComments/></td></tr>
+								<tr><td>data:post.commentJso</td><td><data:post.commentJso/></td></tr>
+								<tr><td>data:post.commentMsgs</td><td><data:post.commentMsgs/></td></tr>
+								<tr><td>data:post.commentConfig</td><td><data:post.commentConfig/></td></tr>
+								<tr><td>data:post.communityId</td><td><data:post.communityId/></td></tr>
+								<tr><td>data:post.commentHtml</td><td><data:post.commentHtml/></td></tr>
+								<tr><td>data:post.commentLabelFull</td><td><data:post.commentLabelFull/></td></tr>
+								<tr><td>data:post.noNewCommentsText</td><td><data:post.noNewCommentsText/></td></tr>
+								<tr><td>data:post.iframeCommentSrc</td><td><data:post.iframeCommentSrc/></td></tr>
+								<tr><td>data:post.addCommentOnclick</td><td><data:post.addCommentOnclick/></td></tr>
+							</table>
+							<!-- <b:include data='post' name='comment-form'/> -->
+							<div class="indent">
+								<h3>data:post.labels</h3>
+								<b:loop var="label" values="data:post.labels">
+									<table>
+										<tr><td>data:label.name</td><td><data:label.name/></td></tr>
+										<tr><td>data:label.url</td><td><data:label.url/></td></tr>
+										<tr><td>data:label.isLast</td><td>Boolean: <b:if cond="data:label.isLast">True<b:else/>False</b:if></td></tr>
+									</table>
+								</b:loop>
+
+								<h3>data:post.comments</h3>
+								<b:if cond='data:blog.pageType != "item"'>
+									<p>Comment's are not visible to pageType that != 'item'</p>
+								</b:if>
+								<b:loop var="comment" values="data:post.comments">
+									<table>
+										<tr><td>data:comment.id</td><td><data:comment.id/></td></tr>
+										<tr><td>data:comment.body</td><td><data:comment.body/></td></tr>
+										<tr><td>data:comment.timestamp</td><td><data:comment.timestamp/></td></tr>
+										<tr><td>data:comment.author</td><td><data:comment.author/></td></tr>
+										<tr><td>data:comment.authorUrl</td><td><data:comment.authorUrl/></td></tr>
+										<tr><td>data:comment.deleteUrl</td><td><data:comment.deleteUrl/></td></tr>
+										<tr><td>data:comment.isDeleted</td><td>Boolean: <b:if cond="data:comment.isDeleted">True<b:else/>False</b:if></td></tr>
+										<tr><td>data:comment.authorAvatarImage</td><td><data:comment.authorAvatarImage/></td></tr>
+									</table>
+								</b:loop>
+							</div>
+						</b:loop>
+					</div>
+				</b:includable>
+			</b:widget>
+			<!-- }}} -->
+
+			<!-- Header Widget Tags {{{ -->
+			<b:widget id="Header1" locked="yes" type="Header">
+				<b:includable id="main">
+					<h1>Header</h1>
+					<table>
+						<tr><td>data:title</td><td><data:title/></td></tr>
+						<tr><td>data:description</td><td><data:description/></td></tr>
+						<tr><td>data:useImage</td><td><data:useImage/></td></tr>
+						<tr><td>data:imagePlacement</td><td><data:imagePlacement/></td></tr>
+						<tr><td>data:mobile</td><td><data:mobile/></td></tr>
+						<tr><td>data:sourceUrl</td><td><data:sourceUrl/></td></tr>
+						<tr><td>data:backgroundPositionStyleStr</td><td><data:backgroundPositionStyleStr/></td></tr>
+						<tr><td>data:height</td><td><data:height/></td></tr>
+						<tr><td>data:width</td><td><data:width/></td></tr>
+						<tr><td>data:widthStyleStr</td><td><data:widthStyleStr/></td></tr>
+					</table>
+				</b:includable>
+			</b:widget>
+			<!-- }}} -->
+
+			<!-- Blog Archive Widget Tags {{{ -->
+			<b:widget id="BlogArchive1" locked="yes" type="BlogArchive">
+				<b:includable id="main">
+					<h1>BlogArchive</h1>
+					<table>
+						<tr><td>data:title</td><td><data:title/></td></tr>
+						<tr><td>data:style</td><td><data:style/></td></tr>
+					</table>
+					
+					<div class="indent">
+						<h2>data:data</h2>
+						<b:loop values='data:data' var='data'>
+							<table>
+								<tr><td>data:data.name</td><td><data:data.name/></td></tr>
+								<tr><td>data:data.post-count</td><td><data:data.post-count/></td></tr>
+								<tr><td>data:data.url</td><td><data:interval.url/></td></tr>
+								<tr><td>data:data.data</td><td>[Array - Sub of this]</td></tr>
+								<tr><td>data:data.posts</td><td>[Array - data:title and data:url]</td></tr>
+							</table>
+						</b:loop>
+					</div>
+				</b:includable>
+			</b:widget>
+			<!-- }}} -->
+
+			<!-- HTML Widget Tags {{{ -->
+			<b:widget id="HTML1" locked="yes" type="HTML">
+				<b:includable id="main">
+					<h1>HTML</h1>
+					<table>
+						<tr><td>data:title</td><td><data:title/></td></tr>
+						<tr><td>data:content</td><td><data:title/></td></tr>
+					</table>
+				</b:includable>
+			</b:widget>
+			<!-- }}} -->
+
+			<!-- Text Widget Tags {{{ -->
+			<b:widget id="Text1" locked="yes" type="Text">
+				<b:includable id="main">
+					<h1>Text</h1>
+					<table>
+						<tr><td>data:title</td><td><data:title/></td></tr>
+						<tr><td>data:content</td><td><data:title/></td></tr>
+					</table>
+				</b:includable>
+			</b:widget>
+			<!-- }}} -->
+
+			<!-- Label Widget Tags {{{ -->
+			<b:widget id="Label1" locked="yes" type="Label">
+				<b:includable id="main">
+					<h1>Label</h1>
+					<table>
+						<tr><td>data:display</td><td><data:display/></td></tr>
+						<tr><td>data:title</td><td><data:title/></td></tr>
+						<tr><td>data:showFreqNumbers</td><td><data:showFreqNumbers/></td></tr>
+					</table>
+					<div class="indent">
+					<h2>data:labels</h2>
+					<b:loop var="label" values="data:labels">
+						<table>
+							<tr><td>data:label.name</td><td><data:label.name/></td></tr>
+							<tr><td>data:label.count</td><td><data:label.count/></td></tr>
+							<tr><td>data:label.url</td><td><data:label.url/></td></tr>
+							<tr><td>data:label.cssSize</td><td><data:label.cssSize/></td></tr>
+						</table>
+					</b:loop>
+					</div>
+				</b:includable>
+			</b:widget>
+			<!-- }}} -->
+			
+			<!-- BloggerButton Widget Tags {{{ -->
+			<b:widget id="BloggerButton1" locked="yes" type="BloggerButton">
+				<b:includable id="main">
+					<h1>BloggerButton</h1>
+					<table>
+						<tr><td>data:fullButton</td><td><data:fullButton/></td></tr>
+					</table>
+				</b:includable>
+			</b:widget>
+			<!-- }}} -->
+
+			<!-- Image Widget Tags {{{ -->
+			<b:widget id="Image1" locked="yes" type="Image">
+				<b:includable id="main">
+					<h1>Image</h1>
+					<table>
+						<tr><td>data:title</td><td><data:title/></td></tr>
+						<tr><td>data:sourceUrl</td><td><data:sourceUrl/></td></tr>
+						<tr><td>data:width</td><td><data:width/></td></tr>
+						<tr><td>data:height</td><td><data:height/></td></tr>
+						<tr><td>data:caption</td><td><data:caption/></td></tr>
+					</table>
+				</b:includable>
+			</b:widget>
+			<!-- }}} -->
+
+			<!-- Stats Widget Tags {{{ -->
+			<b:widget id="Stats1" locked="yes" type="Stats">
+				<b:includable id="main">
+					<h1>Stats</h1>
+					<table>
+						<tr><td>data:title</td><td><data:title/></td></tr>
+						<tr><td>data:showSparkline</td><td><data:showSparkline/></td></tr>
+						<tr><td>data:showGraphicalCounter</td><td><data:showGraphicalCounter/></td></tr>
+						<tr><td>data:showText</td><td><data:showText/></td></tr>
+					</table>
+				</b:includable>
+			</b:widget>
+			<!-- }}} -->
+
+			<!-- BlogList Widget Tags {{{ -->
+			<b:widget id="BlogList1" locked="yes" type="BlogList">
+				<b:includable id="main">
+					<h1>BlogList</h1>
+					<table>
+						<tr><td>data:title</td><td><data:title/></td></tr>
+					</table>
+					<div class="indent">
+					<h2>data:items</h2>
+					<b:loop var="item" values="data:items">
+						<table>
+							<tr><td>data:item.blogUrl</td><td><data:item.blogUrl/></td></tr>
+							<tr><td>data:item.displayStyle</td><td><data:item.displayStyle/></td></tr>
+							<tr><td>data:item.blogTitle</td><td><data:item.blogTitle/></td></tr>
+							<tr><td>data:item.blogIconUrl</td><td><data:item.blogIconUrl/></td></tr>
+							<tr><td>data:item.showIcon</td><td><data:item.showIcon/></td></tr>
+							<tr><td>data:item.showItemThumbnail</td><td><data:item.showItemThumbnail/></td></tr>
+							<tr><td>data:item.itemThumbnail</td><td><data:item.itemThumbnail/></td></tr>
+							<tr><td>data:item.itemThumbnail.height</td><td><data:item.itemThumbnail.height/></td></tr>
+							<tr><td>data:item.itemThumbnail.width</td><td><data:item.itemThumbnail.width/></td></tr>
+							<tr><td>data:item.itemThumbnail.url</td><td><data:item.itemThumbnail.url/></td></tr>
+							<tr><td>data:item.itemTitle</td><td><data:item.itemTitle/></td></tr>
+							<tr><td>data:item.itemUrl</td><td><data:item.itemUrl/></td></tr>
+						</table>
+					</b:loop>
+					</div>
+				</b:includable>
+			</b:widget>
+			<!-- }}} -->
+
+			<!-- PageList Widget Tags {{{ -->
+			<b:widget id="PageList1" locked="yes" type="PageList">
+				<b:includable id="main">
+					<h1>PageList</h1>
+					<table>
+						<tr><td>data:title</td><td><data:title/></td></tr>
+					</table>
+					<div class="indent">
+					<h2>data:links</h2>
+					<b:loop var="link" values="data:links">
+						<table>
+							<tr><td>data:link.title</td><td><data:link.title/></td></tr>
+							<tr><td>data:link.href</td><td><data:link.href/></td></tr>
+							<tr><td>data:link.isCurrentPage</td><td><data:link.isCurrentPage/></td></tr>
+						</table>
+					</b:loop>
+					</div>
+				</b:includable>
+			</b:widget>
+			<!-- }}} -->
+
+			<!-- LinkList Widget Tags {{{ -->
+			<b:widget id="LinkList1" locked="yes" type="LinkList">
+				<b:includable id="main">
+					<h1>LinkList</h1>
+					<table>
+						<tr><td>data:title</td><td><data:title/></td></tr>
+					</table>
+					<div class="indent">
+					<h2>data:links</h2>
+					<b:loop var="link" values="data:links">
+						<table>
+							<tr><td>data:link.target</td><td><data:link.target/></td></tr>
+							<tr><td>data:link.name</td><td><data:link.name/></td></tr>
+						</table>
+					</b:loop>
+					</div>
+				</b:includable>
+			</b:widget>
+			<!-- }}} -->
+
+			<!-- TextList Widget Tags {{{ -->
+			<b:widget id="TextList1" locked="yes" type="TextList">
+				<b:includable id="main">
+					<h1>TextList</h1>
+					<table>
+						<tr><td>data:title</td><td><data:title/></td></tr>
+					</table>
+					<div class="indent">
+					<h2>data:items</h2>
+					<b:loop var="item" values="data:items">
+						<table>
+							<tr><td>data:item</td><td><data:item/></td></tr>
+						</table>
+					</b:loop>
+					</div>
+				</b:includable>
+			</b:widget>
+			<!-- }}} -->
+
+			<!-- PlusFollowers Widget Tags {{{ -->
+			<b:widget id="PlusFollowers1" locked="yes" type="PlusFollowers">
+				<b:includable id="main">
+					<h1>PlusFollowers</h1>
+					<table>
+						<tr><td>data:title</td><td><data:title/></td></tr>
+						<tr><td>data:height</td><td><data:height/></td></tr>
+						<tr><td>data:theme</td><td><data:theme/></td></tr>
+						<tr><td>data:profileUrl</td><td><data:profileUrl/></td></tr>
+						<tr><td>data:width</td><td><data:width/></td></tr>
+					</table>
+				</b:includable>
+			</b:widget>
+			<!-- }}} -->
+
+			<!-- Profile Widget Tags {{{ -->
+			<b:widget id="Profile1" locked="yes" type="Profile">
+				<b:includable id="main">
+					<h1>Profile</h1>
+					<table>
+						<tr><td>data:title</td><td><data:title/></td></tr>
+						<tr><td>data:userUrl</td><td><data:userUrl/></td></tr>
+						<tr><td>data:location</td><td><data:location/></td></tr>
+						<tr><td>data:aboutme</td><td><data:aboutme/></td></tr>
+						<tr><td>data:displayname</td><td><data:displayname/></td></tr>
+						<tr><td>data:photo.url</td><td><data:photo.url/></td></tr>
+						<tr><td>data:photo.width</td><td><data:photo.width/></td></tr>
+						<tr><td>data:photo.height</td><td><data:photo.height/></td></tr>
+						<tr><td>data:photo.alt</td><td><data:photo.alt/></td></tr>
+						<tr><td>data:team</td><td><data:team/></td></tr>
+					</table>
+					<div class="indent">
+						<h2>Team Blogs - data:authors</h2>
+						<b:loop var="author" values="data:authors">
+							<table>
+								<tr><td>data:author.displayname</td><td><data:author.displayname/></td></tr>
+								<tr><td>data:author.userURL</td><td><data:author.userURL/></td></tr>
+							</table>
+						</b:loop>
+					</div>
+				</b:includable>
+			</b:widget>
+			<!-- }}} -->
+
+			<!-- PlusBadge {{{ -->
+			<b:widget id="PlusBadge1" locked="yes" type="PlusBadge">
+				<b:includable id="main">
+					<h1>PlusBadge</h1>
+					<table>
+						<tr><td>data:title</td><td><data:title/></td></tr>
+						<tr><td>data:showCoverPhoto</td><td><data:showCoverPhoto/></td></tr>
+						<tr><td>data:layout</td><td><data:layout/></td></tr>
+						<tr><td>data:width</td><td><data:width/></td></tr>
+						<tr><td>data:height</td><td><data:height/></td></tr>
+						<tr><td>data:theme</td><td><data:theme/></td></tr>
+						<tr><td>data:showTagLine</td><td><data:showTagLine/></td></tr>
+						<tr><td>data:badgeType</td><td><data:badgeType/></td></tr>
+						<tr><td>data:profileUrl</td><td><data:profileUrl/></td></tr>
+					</table>
+				</b:includable>
+			</b:widget>
+			<!-- }}} -->
+
+			<!-- PlusOne {{{ -->
+			<b:widget id="PlusOne1" locked="yes" type="PlusOne">
+				<b:includable id="main">
+					<h1>PlusOne</h1>
+					<table>
+						<tr><td>data:annotation</td><td><data:annotation/></td></tr>
+						<tr><td>data:size</td><td><data:size/></td></tr>
+					</table>
+				</b:includable>
+			</b:widget>
+			<!-- }}} -->
+
+			<!-- Feed {{{ -->
+			<b:widget id="Feed1" locked="yes" type="Feed">
+				<b:includable id="main">
+					<h1>Feed</h1>
+					<table>
+						<tr><td>data:title</td><td><data:title/></td></tr>
+						<tr><td>data:feedUrl</td><td><data:feedUrl/></td></tr>
+					</table>
+				</b:includable>
+			</b:widget>
+			<!-- }}} -->
+
+			<!-- Translate {{{ -->
+			<b:widget id="Translate1" locked="yes" type="Translate">
+				<b:includable id="main">
+					<h1>Translate</h1>
+					<table>
+						<tr><td>data:title</td><td><data:title/></td></tr>
+						<tr><td>data:pageLanguage</td><td><data:pageLanguage/></td></tr>
+						<tr><td>data:layout</td><td><data:layout/></td></tr>
+					</table>
+				</b:includable>
+			</b:widget>
+			<!-- }}} -->
+
+			<!-- PopularPosts {{{ -->
+			<b:widget id="PopularPosts1" locked="yes" type="PopularPosts">
+				<b:includable id="main">
+					<h1>PopularPosts</h1>
+					<table>
+						<tr><td>data:title</td><td><data:title/></td></tr>
+						<tr><td>data:showThumbnails</td><td><data:showThumbnails/></td></tr>
+						<tr><td>data:showSnippets</td><td><data:showSnippets/></td></tr>
+						<tr><td>data:thumbnailSize</td><td><data:thumbnailSize/></td></tr>
+					</table>
+
+					<div class="indent">
+						<h2>data:posts</h2>
+						<b:loop var="post" values="data:posts">
+							<table>
+								<tr><td>data:post.href</td><td><data:post.href/></td></tr>
+								<tr><td>data:post.title</td><td><data:post.title/></td></tr>
+								<tr><td>data:post.snippet</td><td><data:post.snippet/></td></tr>
+								<tr><td>data:post.thumbnail</td><td><data:post.thumbnail/></td></tr>
+							</table>
+						</b:loop>
+					</div>
+				</b:includable>
+			</b:widget>
+			<!-- }}} -->
+
+			<b:widget id="Attribution1" locked="yes" type="Attribution" />
+		</b:section>
+		<div class="copyright">
+			Copyright <a href="http://www.geekthis.net" target="_blank">GeekThis</a> - All Rights Reserved
+		</div>
+		</div>
+	</body>
+</html>
